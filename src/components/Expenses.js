@@ -9,6 +9,9 @@ export default function Expenses() {
     function onDelete(id) {
         console.log(id)
         axios.delete(`http://127.0.0.1:8000/expenses/${id}/`)
+            .catch(error => {
+                throw (error)
+            })
     }
     
   return (

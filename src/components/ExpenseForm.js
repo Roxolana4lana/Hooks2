@@ -14,6 +14,9 @@ const handleSubmit=e=>{
            amount,
        }
     axios.post(`http://127.0.0.1:8000/expenses/`, obj)
+        .catch(error => {
+            throw (error)
+        })
    setAmount('')
    setCategory('')
    setTitle('')

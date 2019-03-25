@@ -6,6 +6,9 @@ export default function useExpensesList() {
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/expenses/')
             .then(res => setExpenses(res.data))
+            .catch(error => {
+                throw (error)
+            })
     })
   return expenses
 }
